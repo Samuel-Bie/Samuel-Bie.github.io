@@ -1,1 +1,0 @@
-# [Tema disponivel para download](https://startbootstrap.com/template-overviews/resume/)
