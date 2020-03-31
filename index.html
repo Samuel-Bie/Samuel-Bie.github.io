@@ -22,8 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
   <!-- CSS
-   ================================================== -->
+    ================================================== -->
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css\folio.css">
 
   <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/libs/css/style.css" />
@@ -146,7 +147,7 @@
 
   <!-- about section
    ================================================== -->
-  <section id="about">
+  <section id="about" class="pb-1">
     <div class="row section-intro">
       <div class="col-twelve">
         <h5>About</h5>
@@ -233,6 +234,13 @@
           <a href="#" class="btn btn-xs btn-outline-danger mt-1">Material</a>
         </p>
 
+        <h4 class="my-1">Clouding tools</h4>
+        <p class="skills">
+          <a href="#" class="btn btn-xs btn-outline-danger mt-1">GCP</a>
+          <a href="#" class="btn btn-xs btn-outline-danger mt-1">AWS</a>
+          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Cloudflare</a>
+        </p>
+
         <h4 class="my-1">My package managers</h4>
         <p class="skills">
           <a href="#" class="btn btn-xs btn-outline-danger mt-1">Composer</a>
@@ -260,23 +268,16 @@
         </p>
       </div>
     </div>
-
-    <div class="row button-section">
-      <div class="col-twelve">
-        <a href="https://1drv.ms/b/s!ArOhYRRe-lg2v2FSx8ePfhdPpktN?e=dgHz6J" title="Download CV"
-          class="button button-primary">Get my resume</a>
-      </div>
-    </div>
   </section>
   <!-- /process-->
+
 
   <!-- resume Section
    ================================================== -->
   <section id="resume" class="grey-section">
     <div class="row section-intro">
       <div class="col-twelve">
-        <h5>Resume</h5>
-        <h1>More of my credentials.</h1>
+        <h5>Where i've been working.</h5>
         <p class="lead">
           If you reached this point thank you, big hug. Now lets get back to
           talk about me.
@@ -293,6 +294,25 @@
 
       <div class="col-twelve">
         <div class="timeline-wrap">
+          <div class="timeline-block">
+            <div class="timeline-ico">
+              <i class="fa fa-code"></i>
+            </div>
+
+            <div class="timeline-header">
+              <h3>Software Engineer</h3>
+              <p>January 2020 - Current</p>
+            </div>
+
+            <div class="timeline-content">
+              <h4>Mucassa LDA.</h4>
+              <p>
+                Dealing with DevOps tools, System Design and Integration.
+                Cloud Infrastructure (GCP & CDNs).
+              </p>
+            </div>
+          </div>
+
           <div class="timeline-block">
             <div class="timeline-ico">
               <i class="fa fa-desktop"></i>
@@ -335,9 +355,8 @@
 
           <div class="timeline-block">
             <div class="timeline-ico">
-              <i class="fa fa-database"></i>
+              <i class="fa fa-signal"></i>
             </div>
-
             <div class="timeline-header">
               <h3>Network Administrator</h3>
               <p>April 2015 - May 2017</p>
@@ -433,19 +452,52 @@
   <section id="certifications">
     <div class="row section-intro">
       <div class="col-twelve">
-        <h5>Certifications</h5>
-        <h1>Check Out the cources i've done.</h1>
+        <h5>I've also code for the community</h5>
+        <h1>Check Out the the samples bellow.</h1>
       </div>
     </div>
     <!-- /section-intro-->
 
-    <div class="row certifications-content">
-      <div class="col-twelve">
-        <!-- certifications-wrapper -->
+    <div class="container-fluid">
+      <div class="gallery-wrap">
+        <ul class="row">
+          <li class="col-lg-6 col-md-6 col-sm-12">
+            <!-- <li class="col-lg-4 col-md-6 col-sm-12"> -->
+            <div class="da-card box-shadow">
+              <div class="da-card-photo">
+                <img src="images\larapesa.png" alt="">
+                <div class="da-overlay">
+                  <div class="da-social">
+                    <h5 class="mb-2 color-white p-3">Laravel Mpesa SDK.</h5>
+                    <ul class="clearfix">
+                      <li><a href="https://packagist.org/packages/samuelbie/mpesa" target="__blank"><i
+                            class="fa fa-link"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
 
-        <!-- /certifications-wrapper -->
+          <!-- <li class="col-lg-4 col-md-6 col-sm-12"> -->
+          <li class="col-lg-6 col-md-6 col-sm-12">
+            <div class="da-card box-shadow">
+              <div class="da-card-photo">
+                <img src="images\lara-helpers.png" alt="">
+                <div class="da-overlay">
+                  <div class="da-social">
+                    <h5 class="mb-2 color-white p-3">Basic Laravel Helpers.</h5>
+                    <ul class="clearfix">
+                      <li><a href="https://packagist.org/packages/samuelbie/mpesa" target="__blank"><i
+                            class="fa fa-link"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
-      <!-- /twelve -->
     </div>
     <!-- /certifications-content -->
   </section>
@@ -541,7 +593,7 @@
 
             <p class="desc">
               Actually i dont do Graphics Design, i just left here to sound
-              like.
+              like. And telling the truth "I HATE IT".
             </p>
           </div>
         </div>
@@ -764,6 +816,7 @@
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+
 </body>
 
 </html>
