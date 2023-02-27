@@ -8,5 +8,8 @@
         "Whatsapp",
         "Zavala",
         "zambeze"
+    ],
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "master"
     ]
 }
