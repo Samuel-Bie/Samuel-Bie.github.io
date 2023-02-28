@@ -9,7 +9,7 @@ git push origin master
 git checkout gh-pages
 
  # bring gh-pages up to date with master
-git rebase master
+git merge master
 
 # push the changes
 git push origin gh-pages
