@@ -1,10 +1,17 @@
 
 git add .
-git status # to see what changes are going to be committed
+# to see what changes are going to be committed
+git status
 git commit -m 'Some descriptive commit message'
 git push origin master
 
-git checkout gh-pages # go to the gh-pages branch
-git rebase master # bring gh-pages up to date with master
-git push origin gh-pages # commit the changes
-git checkout master # return to the master branch
+# go to the gh-pages branch
+git checkout gh-pages
+
+ # bring gh-pages up to date with master
+git rebase master
+
+# push the changes
+git push origin gh-pages
+# return to the master branch
+git checkout master
