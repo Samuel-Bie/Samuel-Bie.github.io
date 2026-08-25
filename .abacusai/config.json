@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(cd /home/coder/dev/Samuel-Bie.github.io)"
-    ]
-  }
-}
