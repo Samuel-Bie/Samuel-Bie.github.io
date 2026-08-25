@@ -1,1206 +1,747 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-
-
-
+<html lang="en">
 <head>
-  <!--- basic page needs
-   ================================================== -->
-  <meta charset="utf-8" />
-  <title>
-    Samuel Bié | Software Engineer | System Integrator | Full Stack Developer
-    | Gym and Bodybuilding Addict
-  </title>
-  <meta name="description"
-    content="Samuel Bié|Software Engineer|System Integrator|Full Stack Developer| Gym and Bodybuilding Addict" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samuel Bié — Software Engineer & Full Stack Developer</title>
+  <meta name="description" content="Samuel Bié is a software engineer and full stack developer with 9+ years of experience building reliable, scalable software with Laravel, Vue.js and modern DevOps practices. Based in Beira, Mozambique." />
   <meta name="author" content="Samuel Bié" />
-  <meta name="google-site-verification" content="GbHPc4fPpgMeZxrMybfUHoQx-EJ91h_k0jeBFQxtd88" />
+  <meta name="keywords" content="Samuel Bié, Software Engineer, Full Stack Developer, Laravel, Vue.js, DevOps, Mozambique, Beira" />
+  <link rel="canonical" href="https://samuel-bie.github.io/" />
 
-  <!-- mobile specific metas
-   ================================================== -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Samuel Bié — Software Engineer & Full Stack Developer" />
+  <meta property="og:description" content="Building reliable, scalable software solutions for 9+ years. Laravel & Vue.js expert with a passion for DevOps." />
+  <meta property="og:url" content="https://samuel-bie.github.io/" />
+  <meta property="og:image" content="https://live.staticflickr.com/4819/46953962681_a4c396adeb_h.jpg" />
+  <meta property="og:site_name" content="Samuel Bié Portfolio" />
 
-  <!-- CSS
-    ================================================== -->
-  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/folio.css">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Samuel Bié — Software Engineer & Full Stack Developer" />
+  <meta name="twitter:description" content="Building reliable, scalable software solutions for 9+ years. Laravel & Vue.js expert with a passion for DevOps." />
+  <meta name="twitter:image" content="https://arxiv.org/html/2510.12399v1/his.png" />
+  <meta name="twitter:creator" content="@Samuelbie" />
 
-  <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/libs/css/style.css" />
+  <meta name="theme-color" content="#0a0a0f" />
 
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/vendor.css" />
+  <!-- Favicon: SVG data URI with "SB" initials -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0f'/%3E%3Ctext x='50' y='50' font-family='Segoe UI,Arial,sans-serif' font-size='46' font-weight='700' fill='%2300d4ff' text-anchor='middle' dominant-baseline='central'%3ESB%3C/text%3E%3C/svg%3E" />
 
-  <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
-
-  <!-- script
-   ================================================== -->
-  <script src="js/modernizr.js"></script>
-  <script src="js/pace.min.js"></script>
-
-  <!-- favicons
-	================================================== -->
-  <link rel="icon" type="image/png" href="https://s.gravatar.com/avatar/ef5e8e8765c5c00f2b8602f094d8b9db?s=20" />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
-    .skills {
-      margin-bottom: 1.5rem !important;
+    :root {
+      --bg: #0a0a0f;
+      --bg-alt: #101018;
+      --surface: #14141d;
+      --surface-2: #1b1b26;
+      --border: #262633;
+      --text: #e8e8ef;
+      --text-muted: #9a9aac;
+      --accent: #00d4ff;
+      --accent-2: #0ea5b7;
+      --accent-glow: rgba(0, 212, 255, 0.15);
+      --radius: 14px;
+      --maxw: 1140px;
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    section { padding: 96px 0; position: relative; }
+    .section-alt { background: var(--bg-alt); }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .section-title span { color: var(--accent); }
+    .section-lead { color: var(--text-muted); max-width: 640px; margin-bottom: 56px; }
+    .center { text-align: center; }
+    .center .section-lead { margin-left: auto; margin-right: auto; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: 40px; font-weight: 600;
+      font-size: 0.95rem; cursor: pointer; border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #04121a; box-shadow: 0 8px 24px var(--accent-glow);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 34px var(--accent-glow); }
+    .btn-ghost { background: transparent; border-color: var(--border); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
+
+    /* Header / Nav */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      transition: background .3s ease, box-shadow .3s ease, backdrop-filter .3s ease;
+      border-bottom: 1px solid transparent;
+    }
+    header.scrolled {
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom-color: var(--border);
+      box-shadow: 0 6px 24px rgba(0,0,0,.3);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo {
+      display: flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--surface-2); border: 1px solid var(--border);
+      font-weight: 800; color: var(--accent); letter-spacing: 0.05em; font-size: 1.05rem;
+    }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a.link { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; position: relative; transition: color .2s; }
+    .nav-links a.link:hover { color: var(--text); }
+    .nav-links a.link::after {
+      content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0;
+      background: var(--accent); transition: width .25s ease;
+    }
+    .nav-links a.link:hover::after { width: 100%; }
+    .nav-actions { display: flex; align-items: center; gap: 16px; }
+    .social-ico {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 10px; color: var(--text-muted);
+      border: 1px solid var(--border); background: var(--surface); transition: all .2s;
+    }
+    .social-ico:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+    .social-ico svg { width: 18px; height: 18px; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Hero */
+    .hero { padding-top: 150px; padding-bottom: 90px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ''; position: absolute; top: -20%; right: -10%; width: 620px; height: 620px;
+      background: radial-gradient(circle, var(--accent-glow), transparent 68%); filter: blur(30px); z-index: 0;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 50px; align-items: center; position: relative; z-index: 1; }
+    .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .hero h1 .accent { color: var(--accent); }
+    .typed-wrap { font-size: clamp(1.1rem, 2.6vw, 1.6rem); font-weight: 600; color: var(--text); min-height: 1.6em; margin-bottom: 18px; }
+    #typed { color: var(--accent); }
+    .cursor { display: inline-block; width: 2px; background: var(--accent); margin-left: 2px; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .hero p.tagline { color: var(--text-muted); font-size: 1.1rem; max-width: 520px; margin-bottom: 32px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .avatar-wrap { display: flex; justify-content: center; }
+    .avatar {
+      width: 260px; height: 260px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5.5rem; font-weight: 800; color: var(--accent);
+      background: radial-gradient(circle at 30% 30%, var(--surface-2), var(--surface));
+      border: 2px solid var(--border); position: relative;
+      box-shadow: 0 0 0 10px rgba(0,212,255,0.04), var(--shadow);
+    }
+    .avatar::after {
+      content: ''; position: absolute; inset: -14px; border-radius: 50%;
+      border: 2px dashed rgba(0,212,255,0.35); animation: spin 22s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-badge {
+      position: absolute; bottom: 14px; right: 8px; background: var(--accent); color: #04121a;
+      font-size: 0.72rem; font-weight: 700; padding: 6px 12px; border-radius: 30px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .avatar-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #04121a; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+    .philosophy { display: flex; gap: 14px; margin-bottom: 22px; }
+    .phil-word { color: var(--accent); font-weight: 800; font-size: 1.05rem; letter-spacing: 0.04em; }
+    .about p { color: var(--text-muted); margin-bottom: 18px; }
+    .about p strong { color: var(--text); }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 22px; text-align: center; transition: transform .25s, border-color .25s; }
+    .stat-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+    .stat-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-label { color: var(--text-muted); font-size: 0.92rem; margin-top: 8px; }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+    .skill-cat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; transition: transform .25s, border-color .25s; }
+    .skill-cat:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .skill-cat h3 { font-size: 1.05rem; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .skill-cat h3 .ic { color: var(--accent); display: inline-flex; }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+    .chip { background: var(--surface-2); border: 1px solid var(--border); color: var(--text); padding: 7px 14px; border-radius: 30px; font-size: 0.85rem; font-weight: 500; transition: all .2s; }
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Experience Timeline */
+    .timeline { position: relative; max-width: 820px; margin: 0 auto; }
+    .timeline::before { content: ''; position: absolute; left: 20px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+    .tl-item { position: relative; padding-left: 62px; margin-bottom: 40px; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: 11px; top: 4px; width: 20px; height: 20px; border-radius: 50%;
+      background: var(--bg); border: 3px solid var(--accent); box-shadow: 0 0 0 4px var(--accent-glow);
+    }
+    .tl-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 26px; transition: transform .25s, border-color .25s; }
+    .tl-card:hover { transform: translateX(6px); border-color: var(--accent); }
+    .tl-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; align-items: baseline; margin-bottom: 4px; }
+    .tl-role { font-size: 1.15rem; font-weight: 700; }
+    .tl-date { color: var(--accent); font-size: 0.82rem; font-weight: 600; background: var(--accent-glow); padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+    .tl-company { color: var(--text-muted); font-weight: 600; margin-bottom: 10px; }
+    .tl-note { font-size: 0.86rem; color: var(--accent); background: rgba(0,212,255,0.06); border-left: 3px solid var(--accent); padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+    .tl-card ul li { color: var(--text-muted); font-size: 0.92rem; padding-left: 20px; position: relative; margin-bottom: 6px; }
+    .tl-card ul li::before { content: '▹'; color: var(--accent); position: absolute; left: 0; }
+
+    /* Education */
+    .edu-card { max-width: 640px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; display: flex; gap: 22px; align-items: center; transition: border-color .25s, transform .25s; }
+    .edu-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .edu-ico { flex-shrink: 0; width: 62px; height: 62px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--accent); }
+    .edu-ico svg { width: 30px; height: 30px; }
+    .edu-card h3 { font-size: 1.2rem; margin-bottom: 4px; }
+    .edu-card .edu-deg { color: var(--accent); font-weight: 600; font-size: 0.95rem; }
+    .edu-card .edu-date { color: var(--text-muted); font-size: 0.88rem; margin-top: 4px; }
+
+    /* Projects */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .proj-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; transition: transform .25s, border-color .25s; }
+    .proj-card:hover { transform: translateY(-6px); border-color: var(--accent); }
+    .proj-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .proj-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--accent); }
+    .proj-icon svg { width: 24px; height: 24px; }
+    .proj-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+    .proj-card p { color: var(--text-muted); font-size: 0.92rem; flex-grow: 1; margin-bottom: 18px; }
+    .proj-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px; }
+    .proj-link:hover { gap: 10px; }
+    .tag-oss { font-size: 0.72rem; font-weight: 700; color: var(--accent); border: 1px solid var(--accent); padding: 3px 10px; border-radius: 20px; }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+    .svc-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px 26px; transition: transform .25s, border-color .25s, background .25s; }
+    .svc-card:hover { transform: translateY(-6px); border-color: var(--accent); background: var(--surface-2); }
+    .svc-ico { width: 54px; height: 54px; border-radius: 14px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 18px; }
+    .svc-ico svg { width: 28px; height: 28px; }
+    .svc-card h3 { font-size: 1.12rem; margin-bottom: 8px; }
+    .svc-card p { color: var(--text-muted); font-size: 0.92rem; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
+    .contact-info h3 { font-size: 1.4rem; margin-bottom: 10px; }
+    .contact-info p.lead { color: var(--text-muted); margin-bottom: 28px; }
+    .contact-item { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .contact-item .ci-ico { flex-shrink: 0; width: 46px; height: 46px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--accent); }
+    .contact-item .ci-ico svg { width: 20px; height: 20px; }
+    .contact-item .ci-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .contact-item .ci-val { font-weight: 600; font-size: 0.98rem; }
+    .contact-item .ci-val.small { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
+    .contact-socials { display: flex; gap: 12px; margin-top: 26px; }
+
+    .contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-muted); }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 12px 15px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 10px; color: var(--text); font-family: var(--font); font-size: 0.95rem; transition: border-color .2s;
+    }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .contact-form .btn-primary { width: 100%; justify-content: center; }
+
+    /* Footer */
+    footer { background: var(--bg-alt); border-top: 1px solid var(--border); padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
+    .footer-inner p { color: var(--text-muted); font-size: 0.9rem; }
+    .footer-socials { display: flex; gap: 12px; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .avatar-wrap { order: -1; }
+      .hero-cta { justify-content: center; }
+      .hero p.tagline { margin-left: auto; margin-right: auto; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .nav-links {
+        position: fixed; top: 72px; right: 0; height: calc(100vh - 72px); width: 260px;
+        background: var(--bg-alt); border-left: 1px solid var(--border);
+        flex-direction: column; align-items: flex-start; gap: 4px; padding: 28px 26px;
+        transform: translateX(100%); transition: transform .3s ease; z-index: 999;
+      }
+      .nav-links.open { transform: translateX(0); }
+      .nav-links a.link { width: 100%; padding: 10px 0; font-size: 1.05rem; }
+      .nav-links .nav-social-mobile { display: flex; gap: 12px; margin-top: 16px; }
+      .nav-actions .desktop-social { display: none; }
+      .hamburger { display: flex; }
+      .avatar { width: 200px; height: 200px; font-size: 4rem; }
+    }
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .tl-item { padding-left: 52px; }
     }
   </style>
 </head>
+<body>
 
-<body id="top">
-  <!-- header
-   ================================================== -->
-  <header>
-    <div class="row">
-      <div class="top-bar">
-        <a class="menu-toggle" href="#"><span>Menu</span></a>
-
-        <div class="logo">
-          <a href="index.html">Menu</a>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container nav">
+      <a href="#hero" class="logo" aria-label="Samuel Bié home">SB</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" class="link">About</a>
+        <a href="#skills" class="link">Skills</a>
+        <a href="#experience" class="link">Experience</a>
+        <a href="#projects" class="link">Projects</a>
+        <a href="#contact" class="link">Contact</a>
+        <div class="nav-social-mobile" style="display:none;">
+          <a class="social-ico" href="https://github.com/samuel-bie" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          </a>
+          <a class="social-ico" href="https://www.linkedin.com/in/samuel-bie" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+          </a>
         </div>
-
-        <nav id="main-nav-wrap">
-          <ul class="main-navigation">
-            <li class="current">
-              <a class="smoothscroll" href="#intro" title="">Home</a>
-            </li>
-            <li><a class="smoothscroll" href="#about" title="">About</a></li>
-            <li>
-              <a class="smoothscroll" href="#resume" title="">Resume</a>
-            </li>
-            <li>
-              <a class="smoothscroll" href="#projects" title="">Projects</a>
-            </li>
-            <li>
-              <a class="smoothscroll" href="#services" title="">Services</a>
-            </li>
-            <li>
-              <a class="smoothscroll" href="#contact" title="">Contact</a>
-            </li>
-          </ul>
-        </nav>
+      </nav>
+      <div class="nav-actions">
+        <a class="social-ico desktop-social" href="https://github.com/samuel-bie" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+        </a>
+        <a class="social-ico desktop-social" href="https://www.linkedin.com/in/samuel-bie" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-primary" style="padding:10px 20px;">Hire Me</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
-      <!-- /top-bar -->
     </div>
-    <!-- /row -->
   </header>
-  <!-- /header -->
 
-  <!-- intro section
-   ================================================== -->
-  <section id="intro">
-    <div class="intro-overlay"></div>
-
-    <div class="intro-content">
-      <div class="row">
-        <div class="col-twelve">
-          <h5>Hello, World<span id="dots">.</span></h5>
-          <h1>
-            I'm Samuel Bié.
-            <i class="flag-icon flag-icon-mz" title="mz" id="mz"></i>
-          </h1>
-
-          <p class="intro-position">
-            <span>Software Engineer</span>
-            <span>Full Stack Developer</span>
-            <span>Vue Js Developer</span>
-          </p>
-
-          <a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Hi, I'm <span class="accent">Samuel Bié</span></h1>
+        <div class="typed-wrap"><span id="typed"></span><span class="cursor">&nbsp;</span></div>
+        <p class="tagline">Building reliable, scalable software solutions for 9+ years.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View My Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        </div>
+      </div>
+      <div class="avatar-wrap">
+        <div class="avatar">SB
+          <span class="avatar-badge"><span class="dot"></span>Available</span>
         </div>
       </div>
     </div>
-    <!-- /intro-content -->
-
-    <ul class="intro-social">
-      <li>
-        <a target="_blank" href="https://github.com/Samuel-Bie"><i class="fa fa-github"></i></a>
-      </li>
-      <li>
-        <a target="_blank" href="https://www.linkedin.com/in/samuelbie/"><i class="fa fa-linkedin"></i></a>
-      </li>
-      <li>
-        <a target="_blank" href="https://twitter.com/Samuelbie"><i class="fa fa-twitter"></i></a>
-      </li>
-
-      <li>
-        <a target="_blank" href="https://stackoverflow.com/users/5254833/samuel-bi%c3%a9"><i
-            class="fa fa-stack-overflow"></i></a>
-      </li>
-      <li>
-        <a target="_blank" href="https://www.facebook.com/samuelanastacio.bie"><i class="fa fa-facebook"></i></a>
-      </li>
-
-      <li>
-        <a target="_blank" href="https://www.instagram.com/samuel_bie/?hl=pt"><i class="fa fa-instagram"></i></a>
-      </li>
-
-    </ul>
-    <!-- /intro-social -->
   </section>
-  <!-- /intro -->
 
-  <!-- about section
-   ================================================== -->
-  <section id="about" class="pb-1">
-    <div class="row section-intro">
-      <div class="col-twelve">
-        <h5>About</h5>
-        <h1>Let me introduce myself.</h1>
-
-        <div class="intro-info">
-          <img src="https://s.gravatar.com/avatar/ef5e8e8765c5c00f2b8602f094d8b9db?s=400" alt="Profile Picture" />
-
-          <p class="lead">
-            I define myself in 3 words
-            <i><strong>"Focused, Committed, Motivated"</strong></i> . I choose
-            these 3 words for simple reasons. Whenever I need to do something
-            I <strong>FOCUS</strong> on my goal, I set activities to achieve
-            it, I <strong>COMMIT</strong>
-            myself with those activities, and I try to
-            <strong>MOTIVATE</strong> so that I can overcome all difficulties
-            and achieve my GOAL.
-          </p>
+  <!-- ABOUT -->
+  <section id="about" class="about section-alt">
+    <div class="container">
+      <span class="eyebrow reveal">About Me</span>
+      <h2 class="section-title reveal">Focused. Committed. <span>Motivated.</span></h2>
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="philosophy">
+            <span class="phil-word">FOCUSED</span><span class="phil-word">COMMITTED</span><span class="phil-word">MOTIVATED</span>
+          </div>
+          <p>I define myself in three words. Whenever I set out to achieve something, I <strong>focus</strong> on the goal, I <strong>commit</strong> to the activities that get me there, and I stay <strong>motivated</strong> so I can overcome every obstacle in the way.</p>
+          <p>I'm a <strong>Systems Analyst and Software Engineer</strong> with 6+ years working across the full stack — from backend architecture to polished frontends — primarily with <strong>Laravel</strong> and <strong>Vue.js</strong>. I have a deep interest in <strong>DevOps</strong>, automation, and building systems that scale reliably.</p>
+          <p>Over 9+ years in the industry I've delivered ERPs, e-commerce platforms, mobile apps and payment integrations, working with teams and clients across multiple countries.</p>
+          <a href="#experience" class="btn btn-ghost" style="margin-top:8px;">My Experience</a>
+        </div>
+        <div class="stats-grid reveal">
+          <div class="stat-card"><div class="stat-num" data-count="11">0</div><div class="stat-label">Projects Delivered</div></div>
+          <div class="stat-card"><div class="stat-num" data-count="7">0</div><div class="stat-label">Happy Clients</div></div>
+          <div class="stat-card"><div class="stat-num" data-count="9" data-suffix="+">0</div><div class="stat-label">Years Experience</div></div>
+          <div class="stat-card"><div class="stat-num" data-count="4">0</div><div class="stat-label">Countries Worked In</div></div>
         </div>
       </div>
     </div>
-    <!-- /section-intro -->
-
-    <div class="row about-content">
-      <div class="col-5 tab-full">
-        <h3>Profile</h3>
-        <p class="text-justify">
-          <strong>Systems Analyst | Software Engineer</strong> for <span>6</span> years,
-          working in all programming stack from backend to front end using the
-          latest technologies like Laravel and Vue JS. Deep interests in DevOps concepts.
-        </p>
-
-        <ul class="info-list">
-          <li>
-            <strong>Full name:</strong>
-            <span>Samuel Bié</span>
-          </li>
-          <li>
-            <strong>Job:</strong>
-            <span>Software Engineer, Full Stack Developer</span>
-          </li>
-          <li>
-            <strong>Email:</strong>
-            <span>samuel.bie75@gmail.com</span>
-          </li>
-
-          <li>
-            <strong>Languages:</strong>
-            <span>Portuguese, English</span>
-          </li>
-        </ul>
-        <!-- /info-list -->
-      </div>
-
-      <div class="col-seven tab-full">
-        <h3>Skills</h3>
-
-        <h4 class="my-1">I speak</h4>
-        <p class="skills">
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">JavaScript</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">PHP</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Python</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Java</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Android</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">C++</a>
-        </p>
-
-        <h4 class="my-1">I store data in</h4>
-        <p class="skills">
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Mysql</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">REDIS</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Memcache</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Mongo DB</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Firebase Realtime Database</a>
-        </p>
-
-        <h4 class="my-1">I use to make it easier</h4>
-        <p class="skills">
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Laravel</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Vue JS</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Flutter</a>
-        </p>
-
-        <h4 class="my-1">To make sure things dont crush, i use</h4>
-        <p class="skills">
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">PHP Unit</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Pest</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Cypress</a>
-        </p>
-
-        <h4 class="my-1">Going to cloud with</h4>
-        <p class="skills">
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Docker</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">GCP</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">AWS</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Vultr</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Cloudflare</a>
-        </p>
-
-        <h4 class="my-1">My package managers</h4>
-        <p class="skills">
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Composer</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">NPM</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">PNPM</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Yarn</a>
-        </p>
-
-
-        <h4 class="my-1">My brothers in code</h4>
-        <p class="skills">
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">StackOverFlow</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Laracasts</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Reddit</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Google.com ❤</a>
-        </p>
-
-        <h4 class="my-1">I control the versions with</h4>
-        <p class="skills">
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Git</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Github</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Bitbucket</a>
-        </p>
-
-        <h4 class="my-1">I write with</h4>
-        <p class="skills">
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">VS Code</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Sublime</a>
-        </p>
-
-        <h4 class="my-1">I talk better with</h4>
-        <p class="skills">
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Linux</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">ZSH</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Terminal</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">SSH</a>
-          <a href="#" class="btn btn-xs btn-outline-danger mt-1">Windows with WSL enabled</a>
-        </p>
-      </div>
-    </div>
   </section>
-  <!-- /process-->
 
-
-  <!-- resume Section
-   ================================================== -->
-  <section id="resume" class="grey-section">
-    <div class="row section-intro">
-      <div class="col-twelve">
-        <h5>Where i've been working.</h5>
-        <p class="lead">
-          If you reached this point thank you, big hug for you.
-          <br>
-          Now lets get back to talk about me.
-        </p>
-      </div>
-    </div>
-    <!-- /section-intro-->
-
-    <div class="row resume-timeline">
-      <div class="col-twelve resume-header">
-        <h2>Work Experience</h2>
-      </div>
-      <!-- /resume-header -->
-
-      <div class="col-twelve">
-        <div class="timeline-wrap">
-
-          <div class="timeline-block">
-            <div class="timeline-ico">
-              <i class="fa fa-code"></i>
-            </div>
-
-            <div class="timeline-header">
-              <h3>Sales and Software Engineer</h3>
-              <p>Dec 2022 - Current</p>
-            </div>
-
-            <div class="timeline-content">
-              <h4>Mucassa Lda.</h4>
-              <h5>Main Competences</h5>
-              <p class="skills">
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">CRM</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Project Management</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Business Analysis</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Vue Js</a>
-              </p>
-              <p>
-              <ul>
-                <li>
-                  Elaboration and presentation of technical and financial proposals for software products tailored
-                  to the client.
-                </li>
-                <li>
-                  Ensure support and follow ups necessary for pre-sales and post-sales needs.
-                </li>
-                <li>
-                  Mediate Business to Customer communication, inside and outside the software development
-                  cycle.
-                </li>
-                <li>
-                  Identification and expansion of new possible software and ICT businesses.
-                </li>
-                <li>
-
-                  Collection of customer feedback for improvement and exploration of new fields of business.
-                  On-demand software development
-                </li>
-
-
-              </ul>
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-block">
-            <div class="timeline-ico">
-              <i class="fa fa-code"></i>
-            </div>
-
-            <div class="timeline-header">
-              <h3>Digital Solutions Officer</h3>
-              <p>Dec 2021 - Oct 2022</p>
-            </div>
-
-            <div class="timeline-content">
-              <h4>Fundacion Capital </h4>
-
-              <h5>Main Competences</h5>
-              <p class="skills">
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Data Analysis</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Data Reports</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Technical Training</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Quality Assurance</a>
-              </p>
-              <div>
-                <ul>
-                  <li>
-                    Monitor the application's programming team, the graphics provider and the audio provider.
-                  </li>
-
-                  <li>
-                    Assist in reviewing and improving storyboards and lists of project requirements programming,
-                    illustrations and audios of the applications.
-                  </li>
-
-                  <li>
-                    Review, give feedback and approve the apps audios and illustrations.
-                  </li>
-
-                  <li>
-                    Carry out quality assurance tests for applications LISTA and Jifunze.
-                  </li>
-
-                  <li>
-                    Carry out technical and methodological tests of the applications in the field, ensuring the quality
-                    of
-                    applications and strategy.
-                  </li>
-
-                  <li>
-                    Install the applications on the tablets, configure backup elements and others, and test data
-                    synchronization, in the office and in the field.
-                  </li>
-
-                  <li>
-                    Track data quality after syncs.
-                  </li>
-
-                  <li>
-                    Document application failures and issues in the quality assurance phases and start of
-                    implementation.
-                  </li>
-
-                  <li>
-                    Train the people involved in the projects, clarify doubts and help seek solutions to problems.
-                  </li>
-
-                  <li>
-                    Support in the installation and management of devices in each office.
-                  </li>
-
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-
-          <div class="timeline-block">
-            <div class="timeline-ico">
-              <i class="fa fa-code"></i>
-            </div>
-
-            <div class="timeline-header">
-              <h3>Lead Software Engineer</h3>
-              <p>Jan 2020 - Current</p>
-            </div>
-
-            <div class="timeline-content">
-              <h4>Mucassa Lda.</h4>
-              <h5>Main Competences</h5>
-              <p class="skills">
-
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Vue Js</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Laravel</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Redis</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Flutter</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Software Management</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">AWS</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">CI/CD</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Docker</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">C#</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Mpesa</a>
-              </p>
-              <p>
-
-              <ul>
-                <li>
-
-                  Management of software development life cycle since (analysis, design, development, testing, and
-                  deployment).
-                </li>
-                <li>
-
-                  Lead the design and development of core backend components for an exciting new Laravel application
-                </li>
-                <li>
-
-                  Develop, maintain, and optimize code for existing and new features
-                </li>
-                <li>
-
-                  Collaborate with other customers do delivery and test on field new Software products.
-                </li>
-                <li>
-
-                  Identify and troubleshoot performance and scalability issues
-                </li>
-                <li>
-
-                  Research and evaluate emerging technologies to improve the product
-                </li>
-                <li>
-
-                  Work with product owners to understand customer needs and develop solutions
-                </li>
-                <li>
-
-                  Write clean, maintainable code and automated tests
-                </li>
-                <li>
-
-                  Monitor production system performance and stability
-                </li>
-                <li>
-
-                  Ensure high quality standards of code and application security
-                </li>
-              </ul>
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-block">
-            <div class="timeline-ico">
-              <i class="fa fa-desktop"></i>
-            </div>
-
-            <div class="timeline-header">
-              <h3>Software Engineer</h3>
-              <p>Jun 2018 - Dec 2019</p>
-            </div>
-
-            <div class="timeline-content">
-              <h4>Xigubo Inc.</h4>
-              <h5>Main Competences</h5>
-              <p class="skills">
-
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Laravel</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">JQuery</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Mysql</a>
-              </p>
-              <div>
-
-                <p> We built amazing things here. We used to deal with
-                  system integration. Our backends resides mostly in Laravel.
-                </p>
-                <ul>
-
-                  <li>
-                    Laravel Fullstack Developer on ERP System
-                  </li>
-
-                  <li>
-                    Fullstack Developer in File Management System
-                  </li>
-
-                  <li>
-                    Development of e-commerce platform xigubo (Vanilla PHP)
-                  </li>
-
-                  <li>
-                    Assist and support end users of the softwares
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-          <!-- /timeline-block -->
-
-          <div class="timeline-block">
-            <div class="timeline-ico">
-              <i class="fa fa-database"></i>
-            </div>
-
-            <div class="timeline-header">
-              <h3>IT Database Manager</h3>
-              <p>Jun 2017 - Jun 2018</p>
-            </div>
-
-            <div class="timeline-content">
-              <h4>Aquachem Limited</h4>
-
-              <h5>Main Competences</h5>
-              <p class="skills">
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Mysql</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">PHP</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">DHIS 2</a>
-              </p>
-              <div>
-
-                <ul>
-                  <li>
-                    Produce reports according to the
-                    collected data
-                  </li>
-                  <li>
-                    Data management of laboratory samples
-                  </li>
-                  <li>
-                    Analysis of laboratory reagents consumption
-                  </li>
-                  <li>
-                    Technical support
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- /timeline-block -->
-
-          <div class="timeline-block">
-            <div class="timeline-ico">
-              <i class="fa fa-signal"></i>
-            </div>
-            <div class="timeline-header">
-              <h3>Network Administrator</h3>
-              <p>Apr 2015 - May 2017</p>
-            </div>
-
-            <div class="timeline-content">
-              <h4>Feedback Consulting</h4>
-
-
-
-              <h5>Main Competences</h5>
-              <p class="skills">
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Linux</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">MS Server</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Networking Protocols</a>
-              </p>
-              <div>
-
-                <ul>
-                  <li>
-                    Setup new network hosts per demand
-                  </li>
-                  <li>
-                    Traffic monitor and Basic firewalls setup
-                  </li>
-                  <li>
-                    Linux and Windows server administration
-                  </li>
-                  <li>
-                    Helpdesk support
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- /timeline-block -->
-
-          <div class="timeline-block">
-            <div class="timeline-ico">
-              <i class="fa fa-briefcase"></i>
-            </div>
-
-            <div class="timeline-header">
-              <h3>Trainee</h3>
-              <p>Apr 2017 - Apr 2018</p>
-            </div>
-
-            <div class="timeline-content">
-              <h4>Technology Campus - Unizambeze</h4>
-              <h5>Main Competences</h5>
-              <div class="skills">
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">PHP</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Laravel</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">Bootstrap</a>
-                <a href="#" class="btn btn-xs btn-outline-danger mt-1">jQuery</a>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    Assist in the development, implementation, and maintenance of software applications and services
-                  </li>
-                  <li>
-
-                    Design and develop user interfaces to facilitate client interaction with software
-                  </li>
-                  <li>
-
-                    Test and debug software applications
-                  </li>
-                  <li>
-
-                    Provide technical support to users
-                  </li>
-                  <li>
-
-                    Troubleshoot and resolve software-related issues
-                  </li>
-                  <li>
-
-                    Participate in team meetings and contribute to the development of software solutions
-                  </li>
-
-
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- /timeline-block -->
-          <div class="timeline-block">
-            <div class="timeline-ico">
-              <i class="fa fa-briefcase"></i>
-            </div>
-
-            <div class="timeline-header">
-              <h3>Volunteer</h3>
-              <p>Jan 2016 - Jan 2016</p>
-            </div>
-
-            <div class="timeline-content">
-              <h4>Government of Zavala District</h4>
-              <ul>
-                <li>
-                  Assisting with the day-to-day operations of the IT department and others departments
-                </li>
-                <li>
-                  Helping to maintain and troubleshoot IT systems
-                </li>
-                <li>
-
-                  Analyzing data, processes and systems to identify and resolve issues
-                </li>
-                <li>
-
-                  Assisting with the maintenance of IT infrastructure
-                </li>
-                <li>
-
-                  Supporting the development of IT policies and procedures
-                </li>
-                <li>
-
-                  Keeping up to date with the latest trends and technologies in the IT field (MS Office and other basic
-                  tools)
-                </li>
-                <li>
-
-                  Maintaining accurate records of IT assets
-                </li>
-                <li>
-
-                  Providing basic user support for IT systems
-                </li>
-                <li>
-
-                  Learning new technologies and tools used by the IT team
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- /timeline-block -->
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <span class="eyebrow reveal">Tech Stack</span>
+      <h2 class="section-title reveal">Skills & <span>Technologies</span></h2>
+      <p class="section-lead reveal">A pragmatic toolkit refined over a decade of shipping production software.</p>
+      <div class="skills-grid">
+        <div class="skill-cat reveal">
+          <h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></span>Languages</h3>
+          <div class="chips"><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C++</span></div>
         </div>
-        <!-- /timeline-wrap -->
-      </div>
-      <!-- /col-twelve -->
-    </div>
-    <!-- /resume-timeline -->
-
-    <div class="row resume-timeline">
-      <div class="col-twelve resume-header">
-        <h2>Education</h2>
-      </div>
-      <!-- /resume-header -->
-
-      <div class="col-twelve">
-        <div class="timeline-wrap">
-          <div class="timeline-block">
-            <div class="timeline-ico">
-              <i class="fa fa-graduation-cap"></i>
-            </div>
-
-            <div class="timeline-header">
-              <h3>Degree</h3>
-              <p>Feb 2014 - Sep 2019</p>
-            </div>
-
-            <div class="timeline-content">
-              <h4>Zambeze University</h4>
-              <p>Computer Engineering.</p>
-            </div>
-          </div>
-          <!-- /timeline-block -->
-
-          <div class="timeline-block">
-            <div class="timeline-ico">
-              <i class="fa fa-graduation-cap"></i>
-            </div>
-
-            <div class="timeline-header">
-              <h3>High School</h3>
-              <p>2008 - 2012</p>
-            </div>
-
-            <div class="timeline-content">
-              <h4>Muele Secondary School</h4>
-            </div>
-          </div>
-          <!-- /timeline-block -->
+        <div class="skill-cat reveal">
+          <h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>Frameworks</h3>
+          <div class="chips"><span class="chip">Laravel</span><span class="chip">Vue.js</span><span class="chip">Flutter</span></div>
         </div>
-        <!-- /timeline-wrap -->
-      </div>
-      <!-- /col-twelve -->
-    </div>
-    <!-- /resume-timeline -->
-  </section>
-  <!-- /features -->
-
-  <!-- projects Section
-   ================================================== -->
-  <section id="projects">
-    <div class="row section-intro">
-      <div class="col-twelve">
-        <h5>I've also code for the community</h5>
-        <h1>Check Out the the samples bellow.</h1>
-      </div>
-    </div>
-    <!-- /section-intro-->
-
-    <div class="container-fluid">
-      <div class="gallery-wrap">
-        <ul class="row">
-          <li class="col-lg-4 col-md-4 col-sm-12">
-            <!-- <li class="col-lg-4 col-md-6 col-sm-12"> -->
-            <div class="da-card box-shadow">
-              <div class="da-card-photo">
-                <img src="images\larapesa.png" alt="">
-                <div class="da-overlay">
-                  <div class="da-social">
-                    <h5 class="mb-2 color-white p-3">Laravel Mpesa SDK.</h5>
-                    <ul class="clearfix">
-                      <li><a href="https://packagist.org/packages/samuelbie/mpesa" target="__blank"><i
-                            class="fa fa-link"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-
-
-
-          <!-- <li class="col-lg-4 col-md-6 col-sm-12"> -->
-          <li class="col-lg-4 col-md-4 col-sm-12">
-            <div class="da-card box-shadow">
-              <div class="da-card-photo">
-                <img src="images\lara-helpers.png" alt="">
-                <div class="da-overlay">
-                  <div class="da-social">
-                    <h5 class="mb-2 color-white p-3">Basic Laravel Helpers.</h5>
-                    <ul class="clearfix">
-                      <li><a href="https://packagist.org/packages/samuelbie/helpers" target="__blank"><i
-                            class="fa fa-link"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <!-- <li class="col-lg-4 col-md-6 col-sm-12"> -->
-          <li class="col-lg-4 col-md-4 col-sm-12">
-            <div class="da-card box-shadow">
-              <div class="da-card-photo">
-                <img src="images\karix-laravel.png" alt="">
-                <div class="da-overlay">
-                  <div class="da-social">
-                    <h5 class="mb-2 color-white p-3">SMS and Whatsapp via Karix.</h5>
-                    <ul class="clearfix">
-                      <li><a href="https://packagist.org/packages/samuelbie/karix" target="__blank"><i
-                            class="fa fa-link"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
+        <div class="skill-cat reveal">
+          <h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></span>Databases</h3>
+          <div class="chips"><span class="chip">MySQL</span><span class="chip">Redis</span><span class="chip">MongoDB</span><span class="chip">Firebase</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6-1.5A4 4 0 0 0 6 19z"/></svg></span>DevOps &amp; Cloud</h3>
+          <div class="chips"><span class="chip">Docker</span><span class="chip">GCP</span><span class="chip">AWS</span><span class="chip">CI/CD</span><span class="chip">Cloudflare</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>Testing</h3>
+          <div class="chips"><span class="chip">PHPUnit</span><span class="chip">Pest</span><span class="chip">Cypress</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>Tools &amp; OS</h3>
+          <div class="chips"><span class="chip">Git</span><span class="chip">VS Code</span><span class="chip">Linux</span><span class="chip">SSH</span></div>
+        </div>
       </div>
     </div>
-    <!-- /projects-content -->
-  </section>
-  <!-- /projects -->
-
-  <section id="cta" class="grey-section">
-    <div class="row cta-content">
-      <div class="col-twelve section-ads">
-        <h2 class="h01"><a href="#">Interests.</a></h2>
-        <p class="lead">
-          More than just a programmer, I actually enjoy attending motivational
-          lectures in my spare time to improve my subconscious when it comes
-          to performing tasks.
-          <br />
-          <br />
-          I am currently looking to develop my computer skills by expanding
-          the range of tools in which I can develop solutions that can enable
-          more outputs for my career.
-          <br />
-          I think in five years I can be a experienced software engineer or
-          analyst leading my own team.
-          <br />
-          <br />
-
-          Whenever I can, I like to practice sports every day. Currently
-          focused on bodybuilding, I think it helps me focus on goals.
-        </p>
-      </div>
-    </div>
-    <!-- /cta-content -->
   </section>
 
-  <!-- services Section
-   ================================================== -->
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section-alt">
+    <div class="container">
+      <span class="eyebrow reveal">Career Path</span>
+      <h2 class="section-title reveal">Professional <span>Experience</span></h2>
+      <p class="section-lead reveal">A decade of growth from network administration to technical and business leadership.</p>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <div class="tl-head"><span class="tl-role">Sales &amp; Lead Software Engineer</span><span class="tl-date">Jan 2020 – Present</span></div>
+            <div class="tl-company">Mucassa Lda.</div>
+            <div class="tl-note">Promoted to a dual role in Dec 2022, combining technical leadership with business development.</div>
+            <ul>
+              <li>Lead the design and development of core backend components for Laravel &amp; Vue.js applications.</li>
+              <li>Manage the full software development life cycle, ensuring clean, maintainable, well-tested code.</li>
+              <li>Identify and troubleshoot performance and scalability issues across production systems.</li>
+              <li>Elaborate and present technical and financial proposals for tailored software products.</li>
+              <li>Mediate business-to-customer communication and drive pre-sales and post-sales support.</li>
+              <li>Identify and expand new software and ICT business opportunities.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <div class="tl-head"><span class="tl-role">Digital Solutions Officer</span><span class="tl-date">Dec 2021 – Oct 2022</span></div>
+            <div class="tl-company">Fundación Capital</div>
+            <ul>
+              <li>Coordinated the application programming team, graphics provider and audio provider.</li>
+              <li>Led QA testing for the LISTA and Jifunze applications.</li>
+              <li>Ran technical and methodological field tests and trained project stakeholders.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <div class="tl-head"><span class="tl-role">Software Engineer</span><span class="tl-date">Jun 2018 – Dec 2019</span></div>
+            <div class="tl-company">Xigubo Inc.</div>
+            <ul>
+              <li>Laravel full-stack developer on a company-wide ERP system.</li>
+              <li>Built the Xigubo e-commerce platform (Vanilla PHP), from database to frontend.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <div class="tl-head"><span class="tl-role">IT Database Manager</span><span class="tl-date">Jun 2017 – Jun 2018</span></div>
+            <div class="tl-company">Aquachem Limited</div>
+            <ul>
+              <li>Managed data pipelines and reporting with MySQL, PHP and DHIS 2.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <div class="tl-head"><span class="tl-role">Network Administrator</span><span class="tl-date">Apr 2015 – May 2017</span></div>
+            <div class="tl-company">Feedback Consulting</div>
+            <ul>
+              <li>Server administration, networking protocols and helpdesk support on Linux &amp; MS Server.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container center">
+      <span class="eyebrow reveal">Academic Background</span>
+      <h2 class="section-title reveal">Education</h2>
+      <div class="edu-card reveal">
+        <div class="edu-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>
+        </div>
+        <div style="text-align:left;">
+          <h3>Zambeze University</h3>
+          <div class="edu-deg">B.Sc. in Computer Engineering</div>
+          <div class="edu-date">2014 – 2019 · Mozambique</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section-alt">
+    <div class="container">
+      <span class="eyebrow reveal">Open Source</span>
+      <h2 class="section-title reveal">Projects &amp; <span>Contributions</span></h2>
+      <p class="section-lead reveal">Open-source packages I've built to help the Laravel and African developer community.</p>
+      <div class="projects-grid">
+        <div class="proj-card reveal">
+          <div class="proj-top">
+            <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+            <span class="tag-oss">OSS</span>
+          </div>
+          <h3>Laravel Mpesa SDK</h3>
+          <p>An open-source SDK to integrate Mpesa mobile payments into Laravel applications. Simplifies payment gateway integration for African markets.</p>
+          <a class="proj-link" href="https://github.com/samuel-bie" target="_blank" rel="noopener">View on GitHub
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="proj-card reveal">
+          <div class="proj-top">
+            <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+            <span class="tag-oss">OSS</span>
+          </div>
+          <h3>Basic Laravel Helpers</h3>
+          <p>A collection of utility helpers for Laravel applications to speed up common development tasks and reduce boilerplate.</p>
+          <a class="proj-link" href="https://github.com/samuel-bie" target="_blank" rel="noopener">View on GitHub
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="proj-card reveal">
+          <div class="proj-top">
+            <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <span class="tag-oss">OSS</span>
+          </div>
+          <h3>Karix SMS &amp; WhatsApp SDK</h3>
+          <p>Integration package for sending SMS and WhatsApp messages via the Karix API within Laravel projects.</p>
+          <a class="proj-link" href="https://github.com/samuel-bie" target="_blank" rel="noopener">View on GitHub
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
   <section id="services">
-    <div class="overlay"></div>
-
-    <div class="row section-intro">
-      <div class="col-twelve">
-        <h5>Services</h5>
-        <h1>What Can I Do For You?</h1>
-        <p class="lead">Actually you can ask me to code anything.</p>
+    <div class="container">
+      <span class="eyebrow reveal">What I Offer</span>
+      <h2 class="section-title reveal">Services</h2>
+      <p class="section-lead reveal">End-to-end software services, from architecture to delivery.</p>
+      <div class="services-grid">
+        <div class="svc-card reveal">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <h3>Web Development</h3>
+          <p>Complex systems like ERPs and business platforms, built to scale with clean, maintainable code.</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+          <h3>Mobile Development</h3>
+          <p>Cross-platform mobile applications using Flutter, delivering native-feel experiences on iOS and Android.</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div>
+          <h3>Web Design</h3>
+          <p>Personal and corporate website design with a focus on clarity, performance and modern aesthetics.</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></div>
+          <h3>IT Consultancy</h3>
+          <p>Strategic IT advice from a seasoned professional — technology choices, architecture and process.</p>
+        </div>
       </div>
     </div>
-    <!-- /section-intro -->
-
-    <div class="row services-content">
-      <div id="owl-slider" class="owl-carousel services-list">
-        <div class="service">
-          <span class="icon"><i class="icon-earth"></i></span>
-
-          <div class="service-content">
-            <h3>Web design</h3>
-            <p class="desc">
-              I use to make some design of personal website and corporative
-              website.
-            </p>
-          </div>
-        </div>
-        <!-- /service -->
-
-        <div class="service">
-          <span class="icon"><i class="icon-window"></i></span>
-
-          <div class="service-content">
-            <h3>Web Development</h3>
-
-            <p class="desc">
-              You are thinking in something more complex like an ERP.
-            </p>
-          </div>
-        </div>
-        <!-- /service -->
-
-        <div class="service">
-          <span class="icon"><i class="icon-toggles"></i></span>
-
-          <div class="service-content">
-            <h3>Mobile Development</h3>
-
-            <p class="desc">
-              Want a mobile app, don't think twice, i can help you
-            </p>
-          </div>
-        </div>
-        <!-- /service -->
-
-        <div class="service">
-          <span class="icon"><i class="icon-image"></i></span>
-
-          <div class="service-content">
-            <h3>Graphics Design</h3>
-
-            <p class="desc">
-              Actually i don't do Graphics Design, i just left here to sound
-              like. And telling the truth "I HATE IT".
-            </p>
-          </div>
-        </div>
-        <!-- /service -->
-
-        <div class="service">
-          <span class="icon"><i class="icon-chat"></i></span>
-
-          <div class="service-content">
-            <h3>Consultancy</h3>
-
-            <p class="desc">
-              Want an IT advice of an professional, don't hesitate.
-            </p>
-          </div>
-        </div>
-        <!-- /service -->
-      </div>
-      <!-- /services-list -->
-    </div>
-    <!-- /services-content -->
   </section>
-  <!-- /services -->
 
-  <!-- stats Section
-   ================================================== -->
-  <section id="stats" class="count-up">
-    <div class="row">
-      <div class="col-twelve">
-        <div class="block-1-6 block-s-1-3 block-tab-1-2 block-mob-full stats-list">
-          <div class="bgrid stat">
-            <div class="icon-part">
-              <i class="icon-pencil-ruler"></i>
-            </div>
-
-            <h3 class="stat-count">
-              11
-            </h3>
-
-            <h5 class="stat-title">
-              Projects Completed
-            </h5>
+  <!-- CONTACT -->
+  <section id="contact" class="section-alt">
+    <div class="container">
+      <span class="eyebrow reveal">Get In Touch</span>
+      <h2 class="section-title reveal">Let's Build Something <span>Great</span></h2>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Contact Information</h3>
+          <p class="lead">Have a project in mind or want to collaborate? I'm always open to discussing new opportunities.</p>
+          <div class="contact-item">
+            <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="ci-label">Location</div><div class="ci-val">Beira, Sofala, Mozambique</div></div>
           </div>
-          <!-- /stat -->
-
-          <div class="bgrid stat">
-            <div class="icon-part">
-              <i class="icon-users"></i>
-            </div>
-
-            <h3 class="stat-count">
-              7
-            </h3>
-
-            <h5 class="stat-title">
-              Happy Clients
-            </h5>
+          <div class="contact-item">
+            <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+            <div><div class="ci-label">Email</div><a class="ci-val" href="/cdn-cgi/l/email-protection#1162707c64747d737874517e64657d7e7e7a3f727e7c"><span class="__cf_email__" data-cfemail="e89b89859d8d848a818da8879d9c84878783c68b8785">[email&#160;protected]</span></a></div>
           </div>
-          <!-- /stat -->
-
-          <div class="bgrid stat">
-            <div class="icon-part">
-              <i class="icon-badge"></i>
-            </div>
-
-            <h3 class="stat-count">
-              1
-            </h3>
-
-            <h5 class="stat-title">
-              Awards Received
-            </h5>
+          <div class="contact-item">
+            <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+            <div><div class="ci-label">Phone</div><div class="ci-val small">(+258) 82 384 7556</div></div>
           </div>
-          <!-- /stat -->
-
-          <div class="bgrid stat">
-            <div class="icon-part">
-              <i class="icon-light-bulb"></i>
-            </div>
-
-            <h3 class="stat-count">
-              10001
-            </h3>
-
-            <h5 class="stat-title">
-              Crazy Ideas
-            </h5>
+          <div class="contact-socials">
+            <a class="social-ico" href="https://www.linkedin.com/in/samuel-bie" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+            </a>
+            <a class="social-ico" href="https://github.com/samuel-bie" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            </a>
           </div>
-          <!-- /stat -->
-
-          <div class="bgrid stat">
-            <div class="icon-part">
-              <i class="icon-cup"></i>
-            </div>
-
-            <h3 class="stat-count">
-              1501
-            </h3>
-
-            <h5 class="stat-title">
-              Coffee Cups
-            </h5>
-          </div>
-          <!-- /stat -->
-
-          <div class="bgrid stat">
-            <div class="icon-part">
-              <i class="icon-clock"></i>
-            </div>
-
-            <h3 class="stat-count">
-              11001
-            </h3>
-
-            <h5 class="stat-title">
-              Hours
-            </h5>
-          </div>
-          <!-- /stat -->
         </div>
-        <!-- /stats-list -->
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+          </button>
+        </form>
       </div>
-      <!-- /twelve -->
     </div>
-    <!-- /row -->
   </section>
-  <!-- /stats -->
 
-  <!-- contact
-   ================================================== -->
-  <section id="contact">
-    <div class="row section-intro">
-      <div class="col-twelve">
-        <h5>Contact</h5>
-        <h1>I'd Love To Hear From You.</h1>
-      </div>
-    </div>
-    <!-- /section-intro -->
-
-    <div class="row contact-info">
-      <div class="col-four tab-full">
-        <div class="icon">
-          <i class="icon-pin"></i>
-        </div>
-
-        <h5>Where to find me</h5>
-
-        <p>
-          2100, Beira Sofala<br />
-          Mozambique<br />
-        </p>
-      </div>
-
-      <div class="col-four tab-full">
-        <div class="icon">
-          <i class="icon-mail"></i>
-        </div>
-
-        <h5>Email Me At</h5>
-
-        <p>
-          <a href="mailto:samuelbie@outlook.com">samuelbie@outlook.com</a>
-          <br />
-          <a href="mailto:samuel.bie75@gmail.com">samuel.bie75@gmail.com</a>
-        </p>
-      </div>
-
-      <div class="col-four tab-full">
-        <div class="icon">
-          <i class="icon-phone"></i>
-        </div>
-
-        <h5>Call Me At</h5>
-
-        <p>
-          <a href="tel:+258823847556"> Mobile 1: (+258) 82 384 7556</a>
-          <br />
-          <a href="tel:+258847386187"> Mobile 2: (+258) 84 738 6187</a>
-          <br />
-        </p>
-      </div>
-    </div>
-    <!-- /contact-info -->
-  </section>
-  <!-- /contact -->
-
-  <!-- footer
-   ================================================== -->
-
+  <!-- FOOTER -->
   <footer>
-    <div class="row">
-      <div class="col-twelve tab-full">
-        <div class="text-center">
-          <span class="">© Copyright | Samuel Bié 2017-<span id="year"></span>.</span>
-        </div>
+    <div class="container footer-inner">
+      <p>© 2017–2026 Samuel Bié. All rights reserved.</p>
+      <div class="footer-socials">
+        <a class="social-ico" href="https://github.com/samuel-bie" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+        </a>
+        <a class="social-ico" href="https://www.linkedin.com/in/samuel-bie" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+        </a>
       </div>
     </div>
-    <!-- /row -->
   </footer>
 
-  <div id="go-top">
-    <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
-  </div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Sticky header
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    });
 
-  <div id="preloader">
-    <div id="loader"></div>
-  </div>
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const mobileSocial = document.querySelector('.nav-social-mobile');
+    function syncMobileSocial() {
+      if (window.innerWidth <= 768) { mobileSocial.style.display = 'flex'; }
+      else { mobileSocial.style.display = 'none'; }
+    }
+    syncMobileSocial();
+    window.addEventListener('resize', syncMobileSocial);
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a.link').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    }));
 
-  <script>
-    document.getElementById("year").innerHTML = new Date().getFullYear();
+    // Typed subtitle
+    const phrases = ['Software Engineer', 'Full Stack Developer', 'Laravel & Vue.js Expert', 'DevOps Enthusiast'];
+    const typedEl = document.getElementById('typed');
+    let pi = 0, ci = 0, deleting = false;
+    function typeLoop() {
+      const current = phrases[pi];
+      typedEl.textContent = current.substring(0, ci);
+      if (!deleting) {
+        if (ci < current.length) { ci++; setTimeout(typeLoop, 80); }
+        else { deleting = true; setTimeout(typeLoop, 1600); }
+      } else {
+        if (ci > 0) { ci--; setTimeout(typeLoop, 40); }
+        else { deleting = false; pi = (pi + 1) % phrases.length; setTimeout(typeLoop, 300); }
+      }
+    }
+    typeLoop();
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Animated counters
+    const counters = document.querySelectorAll('.stat-num');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.count, 10);
+          const suffix = el.dataset.suffix || '';
+          let n = 0;
+          const step = Math.max(1, Math.ceil(target / 40));
+          const tick = () => {
+            n += step;
+            if (n >= target) { el.textContent = target + suffix; }
+            else { el.textContent = n + suffix; requestAnimationFrame(tick); }
+          };
+          tick();
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+
+    // Contact form -> mailto
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value);
+      const email = encodeURIComponent(document.getElementById('email').value);
+      const message = encodeURIComponent(document.getElementById('message').value);
+      const body = 'Name: ' + name + '%0D%0AEmail: ' + email + '%0D%0A%0D%0A' + message;
+      window.location.href = 'mailto:samuelbie@outlook.com?subject=Portfolio%20Contact%20from%20' + name + '&body=' + body;
+    });
   </script>
-
-  <script>
-    var span = document.getElementById("dots");
-
-    var int = setInterval(function () {
-      if ((span.innerHTML += ".").length == 4) span.innerHTML = "";
-    }, 1000);
-  </script>
-
-  <!-- Java Script
-   ================================================== -->
-  <script src="js/jquery-2.1.3.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
 </body>
-
 </html>
-
-<!-- Aqui nao sei o que colocar mas acho que vou deixar esses comentários básicos -->
